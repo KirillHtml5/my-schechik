@@ -10,18 +10,36 @@
     text-align: center;
     box-shadow: 2px 2px 5px white inset, 5px 5px 10px black;
 }
-.uni1{
-    border: none;
-    color: black;
-    padding: 5px 20px;
+.default {
+
     display: inline-block;
+    padding: 15px 30px;
     font-size: 16px;
-    height: 40px;
-    margin-top: 45px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #c9b117;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px #c73434;
+    margin: 7px;
 
 }
+.default:hover{
+    background-color: rgba(54, 140, 243, 0.81)
+}
+.default:active{
+    background-color:#c9b117;
+    box-shadow: 0 5px #c73434;
+    transform: translateY(3px);
+}
+.default:disabled{
+    background-color: lightslategrey;
+}
 .tab{
-    height: 50px;
+    height: 80px;
 }
 .red{
     color: red;

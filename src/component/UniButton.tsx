@@ -6,6 +6,6 @@ type UniButtonType = {
 }
 export const UniButton = (props: UniButtonType) => {
     return (
-        <button onClick={props.callBack} disabled={props.disabled}>{props.name}</button>
+        <button className={'default'} onClick={props.callBack} disabled={props.disabled}>{props.name}</button>
     )
 }

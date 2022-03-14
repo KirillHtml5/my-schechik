@@ -24,7 +24,7 @@ function App() {
             <div className={'tab'}>
                 <Tablo number={num}/>
             </div>
-            <div className={'uni1'}>
+            <div>
                 <UniButton name={'inc'} callBack={onClickInc} disabled={num === MaxValue}/>
                 <UniButton name={'reset'} callBack={onClickReset} disabled={num === StartValue}/>
                 {/*<IncButton onClickInc={onClickInc} number={num}/>*/}
