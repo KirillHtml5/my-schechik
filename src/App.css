@@ -39,8 +39,21 @@
     background-color: lightslategrey;
 }
 .tab{
+    display: inline-block;
     height: 80px;
+    border: 2px solid gold;
+    border-radius: 10px;
+    width: 150px;
+    margin: 10px;
+}
+.number{
+    font-style: italic;
+    font-size: 50px;
+    font-weight: bold;
 }
 .red{
     color: red;
+    font-style: italic;
+    font-size: 50px;
+    font-weight: bold;
 }

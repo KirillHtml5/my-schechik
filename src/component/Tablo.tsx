@@ -3,6 +3,6 @@ type TabloType = {
 }
 export const Tablo = (props: TabloType) => {
     return (
-        <div><h1 className={props.number===5?'red':''}>{props.number}</h1></div>
+        <div className={props.number===5?'red':'number'}>{props.number}</div>
     )
 }
