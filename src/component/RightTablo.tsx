@@ -8,7 +8,7 @@ export type RightTabloType = {
     onClickReset: () => void
 }
 
-const RightTablo = (props: RightTabloType) => {
+export const RightTablo = (props: RightTabloType) => {
     const MaxValue = 5;
     const StartValue = 0;
     return (
@@ -27,4 +27,3 @@ const RightTablo = (props: RightTabloType) => {
         ;
 };
 
-export default RightTablo;
