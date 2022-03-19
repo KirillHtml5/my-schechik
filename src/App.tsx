@@ -4,6 +4,7 @@ import {Tablo} from "./component/Tablo";
 import {IncButton} from "./component/IncButton";
 import {ResetButton} from "./component/ResetButton";
 import {UniButton} from "./component/UniButton";
+import RightTablo from "./component/RightTablo";
 
 
 function App() {
@@ -21,15 +22,19 @@ function App() {
 
     return (
         <div className={'App'}>
-            <div className={'tab'}>
-                <Tablo number={num}/>
+            <div className={'right'}>
+                <RightTablo
+                    num={num}
+                    onClickInc={onClickInc}
+                    onClickReset={onClickReset}/>
             </div>
-            <div>
-                <UniButton name={'inc'} callBack={onClickInc} disabled={num === MaxValue}/>
-                <UniButton name={'reset'} callBack={onClickReset} disabled={num === StartValue}/>
-                {/*<IncButton onClickInc={onClickInc} number={num}/>*/}
-                {/*<ResetButton onClickReset={onClickReset} number={num}/>*/}
+            <div className={'right'}>
+                <RightTablo
+                    num={num}
+                    onClickInc={onClickInc}
+                    onClickReset={onClickReset}/>
             </div>
+
         </div>
 
     );

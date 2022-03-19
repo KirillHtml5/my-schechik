@@ -1,7 +1,22 @@
 .App {
-    display: flex;
-    margin: 0 auto;
+    display: inline-flex;
+
+    /*margin: 0 auto;*/
+    /*margin-top: 100px;*/
+    /*width: 250px;*/
+    /*background-color: blue;*/
+    /*border-radius: 10px;*/
+    /*flex-direction: column;*/
+    /*align-items: center;*/
+    /*text-align: center;*/
+    /*box-shadow: 2px 2px 5px white inset, 5px 5px 10px black;*/
+    /*padding: 50px;*/
+}
+
+.right {
     margin-top: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
     width: 250px;
     background-color: blue;
     border-radius: 10px;
@@ -9,7 +24,9 @@
     align-items: center;
     text-align: center;
     box-shadow: 2px 2px 5px white inset, 5px 5px 10px black;
+    padding: 30px;
 }
+
 .default {
 
     display: inline-block;
@@ -27,18 +44,22 @@
     margin: 7px;
 
 }
-.default:hover{
+
+.default:hover {
     background-color: rgba(54, 140, 243, 0.81)
 }
-.default:active{
-    background-color:#c9b117;
+
+.default:active {
+    background-color: #c9b117;
     box-shadow: 0 5px #c73434;
     transform: translateY(3px);
 }
-.default:disabled{
+
+.default:disabled {
     background-color: lightslategrey;
 }
-.tab{
+
+.tab {
     display: inline-block;
     height: 80px;
     border: 2px solid gold;
@@ -46,12 +67,14 @@
     width: 150px;
     margin: 10px;
 }
-.number{
+
+.number {
     font-style: italic;
     font-size: 50px;
     font-weight: bold;
 }
-.red{
+
+.red {
     color: red;
     font-style: italic;
     font-size: 50px;
