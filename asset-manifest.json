@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/my-schechik/static/css/main.b36c2163.css",
+    "main.js": "/my-schechik/static/js/main.df8c9c1d.js",
+    "index.html": "/my-schechik/index.html",
+    "main.b36c2163.css.map": "/my-schechik/static/css/main.b36c2163.css.map",
+    "main.df8c9c1d.js.map": "/my-schechik/static/js/main.df8c9c1d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b36c2163.css",
+    "static/js/main.df8c9c1d.js"
+  ]
+}
