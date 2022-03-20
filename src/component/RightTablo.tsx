@@ -3,24 +3,24 @@ import {Tablo} from "./Tablo";
 import {UniButton} from "./UniButton";
 
 export type RightTabloType = {
+    number:number
     num: number
+    numMax: number
     onClickInc: () => void
     onClickReset: () => void
 }
 
 export const RightTablo = (props: RightTabloType) => {
-    const MaxValue = 5;
-    const StartValue = 0;
+
     return (
         <div>
             <div className={'tab'}>
-                <Tablo number={props.num}/>
+                <Tablo number={props.number}/>
             </div>
             <div>
-                <UniButton name={'inc'} callBack={props.onClickInc} disabled={props.num === MaxValue}/>
-                <UniButton name={'reset'} callBack={props.onClickReset} disabled={props.num === StartValue}/>
-                {/*<IncButton onClickInc={onClickInc} number={num}/>*/}
-                {/*<ResetButton onClickReset={onClickReset} number={num}/>*/}
+                <UniButton name={'inc'} callBack={props.onClickInc} disabled={props.num === props.numMax}/>
+                <UniButton name={'reset'} callBack={props.onClickReset} disabled={false}/>
+
             </div>
         </div>
     )
