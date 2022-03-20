@@ -80,3 +80,8 @@
     font-size: 50px;
     font-weight: bold;
 }
+
+.error {
+    border: 3px solid red;
+    background-color: red;
+}

@@ -1,21 +1,17 @@
-import React, {ChangeEvent, useState} from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import {Tablo} from "./component/Tablo";
-import {IncButton} from "./component/IncButton";
-import {ResetButton} from "./component/ResetButton";
-import {UniButton} from "./component/UniButton";
 import {RightTablo} from "./component/RightTablo";
 import {LeftTablo} from "./component/LeftTablo";
 
 
 function App() {
-    const MaxValue = 5;
-    const StartValue = 0;
+
 
     let [num, setNum] = useState<number>(0)
 
     let [maxValue, setMaxValue] = useState<number>(5)
     let [startValue, setStartValue] = useState<number>(0)
+    let [error, setError] = useState<string | null>(null)
 
     const onClickInc = () => {
         if (num < maxValue)
@@ -26,12 +22,24 @@ function App() {
         setNum(startValue)
     }
 
-    const onChangeMax = (maxValue:number) => {
-        setMaxValue(maxValue)
+    const onChangeMax = (maxValue: number) => {
+        if (maxValue > 0 && maxValue > startValue) {
+            setMaxValue(maxValue)
+            setError('')
+        } else {
+            setError('ERROR')
+        }
+
     }
-    const onChangeStart=(startValue:number)=>{
-        setNum(startValue)
-        setStartValue(startValue)
+    const onChangeStart = (startValue: number) => {
+        if (startValue >= 0 && startValue < maxValue) {
+            setNum(startValue)
+            setStartValue(startValue)
+            setError('')
+        } else {
+            setError('errrrrr')
+        }
+
     }
 
     return (
@@ -42,6 +50,7 @@ function App() {
                     startValue={startValue}
                     onChangeMax={onChangeMax}
                     onChangeStart={onChangeStart}
+                    error={error}
                 />
             </div>
             <div className={'right'}>
@@ -50,7 +59,9 @@ function App() {
                     num={startValue}
                     numMax={maxValue}
                     onClickInc={onClickInc}
-                    onClickReset={onClickReset}/>
+                    onClickReset={onClickReset}
+                    error={error}
+                />
             </div>
 
         </div>

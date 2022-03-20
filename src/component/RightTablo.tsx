@@ -3,11 +3,12 @@ import {Tablo} from "./Tablo";
 import {UniButton} from "./UniButton";
 
 export type RightTabloType = {
-    number:number
+    number: number
     num: number
     numMax: number
     onClickInc: () => void
     onClickReset: () => void
+    error: string | null
 }
 
 export const RightTablo = (props: RightTabloType) => {
@@ -15,11 +16,11 @@ export const RightTablo = (props: RightTabloType) => {
     return (
         <div>
             <div className={'tab'}>
-                <Tablo number={props.number}/>
+                <Tablo number={props.number} numMax={props.numMax} error={props.error}/>
             </div>
             <div>
-                <UniButton name={'inc'} callBack={props.onClickInc} disabled={props.num === props.numMax}/>
-                <UniButton name={'reset'} callBack={props.onClickReset} disabled={false}/>
+                <UniButton name={'inc'} callBack={props.onClickInc} disabled={props.number === props.numMax}/>
+                <UniButton name={'reset'} callBack={props.onClickReset} disabled={props.number === props.num}/>
 
             </div>
         </div>

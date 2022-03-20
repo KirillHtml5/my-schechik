@@ -1,21 +1,23 @@
-import React, {ChangeEvent, useState} from 'react';
-export type LeftTabloPropsType={
-    maxValue:number
+import React, {ChangeEvent} from 'react';
+
+export type LeftTabloPropsType = {
+    maxValue: number
     startValue: number
-    onChangeMax:(maxValue:number)=> void
-    onChangeStart:(startValue:number)=> void
+    onChangeMax: (maxValue: number) => void
+    onChangeStart: (startValue: number) => void
+    error: string | null
 }
-export const LeftTablo = (props:LeftTabloPropsType) => {
+export const LeftTablo = (props: LeftTabloPropsType) => {
 
     const setLocal = () => {
         localStorage.setItem('Max value', JSON.stringify(props.maxValue))
         localStorage.setItem('Start value', JSON.stringify(props.startValue))
 
     }
-   const onChangeMaxHandler=(e: ChangeEvent<HTMLInputElement>)=>{
+    const onChangeMaxHandler = (e: ChangeEvent<HTMLInputElement>) => {
         props.onChangeMax(e.currentTarget.valueAsNumber)
-   }
-    const onChangeStartHandler=(e: ChangeEvent<HTMLInputElement>)=>{
+    }
+    const onChangeStartHandler = (e: ChangeEvent<HTMLInputElement>) => {
         props.onChangeStart(e.currentTarget.valueAsNumber)
     }
 
@@ -26,6 +28,7 @@ export const LeftTablo = (props:LeftTabloPropsType) => {
                 <input
                     type={"number"}
                     onChange={onChangeMaxHandler}
+                    className={props.error ? 'error' : ''}
                 />
             </span>
             <span>
@@ -33,6 +36,7 @@ export const LeftTablo = (props:LeftTabloPropsType) => {
                 <input
                     type={"number"}
                     onChange={onChangeStartHandler}
+                    className={props.error ? 'error' : ''}
                 />
             </span>
             <button onClick={setLocal}>Set</button>
