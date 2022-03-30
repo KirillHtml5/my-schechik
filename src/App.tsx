@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import {RightTablo} from "./component/RightTablo";
-import {LeftTablo} from "./component/LeftTablo";
+import {LeftTablo} from "./component/LeftTablo/LeftTablo";
 
 
 function App() {

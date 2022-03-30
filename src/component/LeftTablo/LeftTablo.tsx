@@ -23,22 +23,22 @@ export const LeftTablo = (props: LeftTabloPropsType) => {
 
     return (
         <div>
-            <span>
-                Max value:
+            <div>
+                <h3>Max value:</h3>
                 <input
                     type={"number"}
                     onChange={onChangeMaxHandler}
                     className={props.error ? 'error' : ''}
                 />
-            </span>
-            <span>
-                Start value:
+            </div>
+            <div>
+                <h3>Start value:</h3>
                 <input
                     type={"number"}
                     onChange={onChangeStartHandler}
                     className={props.error ? 'error' : ''}
                 />
-            </span>
+            </div>
             <button onClick={setLocal}>Set</button>
         </div>
     );
