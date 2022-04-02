@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/my-schechik/static/css/main.b36c2163.css",
-    "main.js": "/my-schechik/static/js/main.df8c9c1d.js",
+    "main.css": "/my-schechik/static/css/main.2e09ae7d.css",
+    "main.js": "/my-schechik/static/js/main.be7905fd.js",
     "index.html": "/my-schechik/index.html",
-    "main.b36c2163.css.map": "/my-schechik/static/css/main.b36c2163.css.map",
-    "main.df8c9c1d.js.map": "/my-schechik/static/js/main.df8c9c1d.js.map"
+    "main.2e09ae7d.css.map": "/my-schechik/static/css/main.2e09ae7d.css.map",
+    "main.be7905fd.js.map": "/my-schechik/static/js/main.be7905fd.js.map"
   },
   "entrypoints": [
-    "static/css/main.b36c2163.css",
-    "static/js/main.df8c9c1d.js"
+    "static/css/main.2e09ae7d.css",
+    "static/js/main.be7905fd.js"
   ]
 }
