@@ -1,12 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
-import {RightTablo} from "./component/RightTablo";
+import {RightTablo} from "./component/RightTablo/RightTablo";
 import {LeftTablo} from "./component/LeftTablo/LeftTablo";
 
 
-
 function App() {
-
 
     const [num, setNum] = useState<number>(0)
     const [maxValue, setMaxValue] = useState<number>(5)
@@ -106,7 +104,6 @@ function App() {
                     error={error}
                 />
             </div>
-
         </div>
 
     );

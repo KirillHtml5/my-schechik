@@ -7,7 +7,7 @@ export type LeftTabloPropsType = {
     onChangeMax: (maxValue: number) => void
     onChangeStart: (startValue: number) => void
     error: string | null
-    setButton:()=> void
+    setButton: () => void
 }
 export const LeftTablo = (props: LeftTabloPropsType) => {
 

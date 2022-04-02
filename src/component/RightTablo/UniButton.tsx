@@ -1,3 +1,5 @@
+import s from './RightTablo.module.css'
+
 type UniButtonType = {
     name: string
     callBack: () => void
@@ -6,6 +8,6 @@ type UniButtonType = {
 }
 export const UniButton = (props: UniButtonType) => {
     return (
-        <button className={'default'} onClick={props.callBack} disabled={props.disabled}>{props.name}</button>
+        <button className={s.default} onClick={props.callBack} disabled={props.disabled}>{props.name}</button>
     )
 }

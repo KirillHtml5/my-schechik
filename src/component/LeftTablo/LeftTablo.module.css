@@ -43,6 +43,10 @@
     transform: translateY(3px);
 }
 
+.default:disabled {
+    background-color: lightslategrey;
+}
+
 .superInput {
     height: 40px;
     width: 100px;
