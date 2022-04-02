@@ -1,4 +1,5 @@
 import React, {ChangeEvent} from 'react';
+import s from './LeftTablo.module.css'
 
 export type LeftTabloPropsType = {
     maxValue: number
@@ -23,24 +24,24 @@ export const LeftTablo = (props: LeftTabloPropsType) => {
     }
 
     return (
-        <div>
+        <div className={s.left}>
             <div>
-                <h3>Max value:</h3>
+                <span className={s.span}>Max value: </span>
                 <input
                     type={"number"}
                     onChange={onChangeMaxHandler}
-                    className={props.error ? 'error2' : 'superInput'}
+                    className={props.error ? s.errorInput : s.superInput}
                 />
             </div>
             <div>
-                <h3>Start value:</h3>
+                <span className={s.span}>Start value: </span>
                 <input
                     type={"number"}
                     onChange={onChangeStartHandler}
-                    className={props.error ? 'error2' : 'superInput'}
+                    className={props.error ? s.errorInput : s.superInput}
                 />
             </div>
-            <button onClick={props.setButton} className={'default'}>Set</button>
+            <button onClick={props.setButton} className={s.default}>Set</button>
         </div>
     );
 };

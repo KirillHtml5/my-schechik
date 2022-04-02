@@ -27,18 +27,7 @@
     padding: 30px;
 }
 
-.left {
-    height: 210px;
-    margin-top: 250px;
-    margin-left: 50px;
-    margin-right: 50px;
-    width: 250px;
-    background-color: blue;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 2px 2px 5px white inset, 5px 5px 10px black;
-    padding: 30px;
-}
+
 
 .default {
 
@@ -100,35 +89,3 @@
     background-color: red;
 }
 
-.superInput {
-    height: 30px;
-    width: 200px;
-    padding: 1px;
-    margin: 5px 0;
-    box-sizing: border-box;
-    border: 3px solid #ccc;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-    outline: none;
-}
-
-.superInput:focus {
-    border: 3px solid rgba(253, 226, 44, 0.81);
-}
-
-.errorInput {
-    width: 20%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 10px solid red;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-    outline: none;
-}
-
-.error2 {
-    color: red;
-    font-size: 20px;
-
-}

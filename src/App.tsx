@@ -53,6 +53,7 @@ function App() {
     const setButton = () => {
         setNum(num)
         setNum(startValue)
+        setMaxValue(maxValue)
 
     }
 
