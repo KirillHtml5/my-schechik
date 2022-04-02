@@ -28,7 +28,7 @@ export const LeftTablo = (props: LeftTabloPropsType) => {
                 <input
                     type={"number"}
                     onChange={onChangeMaxHandler}
-                    className={props.error ? 'error' : ''}
+                    className={props.error ? 'error2' : 'superInput'}
                 />
             </div>
             <div>
@@ -36,10 +36,10 @@ export const LeftTablo = (props: LeftTabloPropsType) => {
                 <input
                     type={"number"}
                     onChange={onChangeStartHandler}
-                    className={props.error ? 'error' : ''}
+                    className={props.error ? 'error2' : 'superInput'}
                 />
             </div>
-            <button onClick={setLocal}>Set</button>
+            <button onClick={setLocal} className={'default'}>Set</button>
         </div>
     );
 };

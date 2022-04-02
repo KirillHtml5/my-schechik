@@ -8,7 +8,6 @@ function App() {
 
 
     let [num, setNum] = useState<number>(0)
-
     let [maxValue, setMaxValue] = useState<number>(5)
     let [startValue, setStartValue] = useState<number>(0)
     let [error, setError] = useState<string | null>(null)
@@ -16,7 +15,6 @@ function App() {
     const onClickInc = () => {
         if (num < maxValue)
             setNum(num + 1)
-
     }
     const onClickReset = () => {
         setNum(startValue)
@@ -44,7 +42,7 @@ function App() {
 
     return (
         <div className={'App'}>
-            <div className={'right'}>
+            <div className={'left'}>
                 <LeftTablo
                     maxValue={maxValue}
                     startValue={startValue}
