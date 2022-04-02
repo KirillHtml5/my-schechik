@@ -6,14 +6,15 @@ export type LeftTabloPropsType = {
     onChangeMax: (maxValue: number) => void
     onChangeStart: (startValue: number) => void
     error: string | null
+    setButton:()=> void
 }
 export const LeftTablo = (props: LeftTabloPropsType) => {
 
-    const setLocal = () => {
-        localStorage.setItem('Max value', JSON.stringify(props.maxValue))
-        localStorage.setItem('Start value', JSON.stringify(props.startValue))
-
-    }
+    // const setLocal = () => {
+    //     localStorage.setItem('Max value', JSON.stringify(props.maxValue))
+    //     localStorage.setItem('Start value', JSON.stringify(props.startValue))
+    //
+    // }
     const onChangeMaxHandler = (e: ChangeEvent<HTMLInputElement>) => {
         props.onChangeMax(e.currentTarget.valueAsNumber)
     }
@@ -39,7 +40,7 @@ export const LeftTablo = (props: LeftTabloPropsType) => {
                     className={props.error ? 'error2' : 'superInput'}
                 />
             </div>
-            <button onClick={setLocal} className={'default'}>Set</button>
+            <button onClick={props.setButton} className={'default'}>Set</button>
         </div>
     );
 };
