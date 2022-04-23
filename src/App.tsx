@@ -83,6 +83,7 @@ function App() {
     }
 
     return (
+
         <div className={'App'}>
             <div className={'left'}>
                 <LeftTablo
@@ -105,6 +106,7 @@ function App() {
                 />
             </div>
         </div>
+
 
     );
 }
