@@ -11,11 +11,7 @@ export type LeftTabloPropsType = {
 }
 export const LeftTablo = (props: LeftTabloPropsType) => {
 
-    // const setLocal = () => {
-    //     localStorage.setItem('Max value', JSON.stringify(props.maxValue))
-    //     localStorage.setItem('Start value', JSON.stringify(props.startValue))
-    //
-    // }
+
     const onChangeMaxHandler = (e: ChangeEvent<HTMLInputElement>) => {
         props.onChangeMax(e.currentTarget.valueAsNumber)
     }
