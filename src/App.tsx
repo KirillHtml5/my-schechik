@@ -2,9 +2,16 @@ import React, {useEffect, useState} from 'react';
 import './App.css';
 import {RightTablo} from "./component/RightTablo/RightTablo";
 import {LeftTablo} from "./component/LeftTablo/LeftTablo";
+import {useDispatch, useSelector} from "react-redux";
+import {AppRootStateType} from "./bll/store";
+import {increaseNumAC, resetNumAC, setMaxNumAC, setStartNumAC} from "./bll/counterReducer";
 
 
 function App() {
+    const value = useSelector<AppRootStateType, number>(state => state.counter.num);
+    const startNum = useSelector<AppRootStateType, number>(state => state.counter.startValue);
+    const maxNum = useSelector<AppRootStateType, number>(state => state.counter.maxValue);
+    const dispatch = useDispatch();
 
     const [num, setNum] = useState<number>(0)
     const [maxValue, setMaxValue] = useState<number>(5)
@@ -20,8 +27,8 @@ function App() {
     }, [])
 
     useEffect(() => {
-        localStorage.setItem('Max value', JSON.stringify(maxValue))
-    }, [maxValue])
+        localStorage.setItem('Max value', JSON.stringify(maxNum))
+    }, [maxNum])
 
     useEffect(() => {
         let startValueAsString = localStorage.getItem('Start value')
@@ -32,8 +39,8 @@ function App() {
     }, [])
 
     useEffect(() => {
-        localStorage.setItem('Start value', JSON.stringify(startValue))
-    }, [startValue])
+        localStorage.setItem('Start value', JSON.stringify(startNum))
+    }, [startNum])
 
     useEffect(() => {
         let valueAsString = localStorage.getItem('value')
@@ -44,37 +51,37 @@ function App() {
     }, [])
 
     useEffect(() => {
-        localStorage.setItem('value', JSON.stringify(num))
-    }, [num])
+        localStorage.setItem('value', JSON.stringify(value))
+    }, [value])
 
 
     const setButton = () => {
-        setNum(num)
-        setNum(startValue)
-        setMaxValue(maxValue)
+        // setNum(num)
+        dispatch(setStartNumAC(startNum))
+        dispatch(setMaxNumAC(maxNum))
 
     }
 
     const onClickInc = () => {
-        if (num < maxValue)
-            setNum(num + 1)
+        if (value < maxValue)
+            dispatch(increaseNumAC())
     }
     const onClickReset = () => {
-        setNum(startValue)
+        dispatch(resetNumAC(startNum))
     }
 
-    const onChangeMax = (maxValue: number) => {
+    const onChangeMax = (maxNum: number) => {
         if (maxValue > 0 && maxValue > startValue) {
-            setMaxValue(maxValue)
+            dispatch(setMaxNumAC(maxNum))
             setError('')
         } else {
             setError('Incorrect value!')
         }
 
     }
-    const onChangeStart = (startValue: number) => {
+    const onChangeStart = (startNum: number) => {
         if (startValue >= 0 && startValue < maxValue) {
-            setStartValue(startValue)
+            dispatch(setStartNumAC(startNum))
             setError('')
         } else {
             setError('Insert new value and press Set')
@@ -87,8 +94,8 @@ function App() {
         <div className={'App'}>
             <div className={'left'}>
                 <LeftTablo
-                    maxValue={maxValue}
-                    startValue={startValue}
+                    maxValue={maxNum}
+                    startValue={startNum}
                     onChangeMax={onChangeMax}
                     onChangeStart={onChangeStart}
                     error={error}
@@ -97,9 +104,9 @@ function App() {
             </div>
             <div className={'right'}>
                 <RightTablo
-                    number={num}
-                    num={startValue}
-                    numMax={maxValue}
+                    number={value}
+                    num={startNum}
+                    numMax={maxNum}
                     onClickInc={onClickInc}
                     onClickReset={onClickReset}
                     error={error}

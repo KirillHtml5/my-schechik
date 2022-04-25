@@ -7,7 +7,7 @@ export type LeftTabloPropsType = {
     onChangeMax: (maxValue: number) => void
     onChangeStart: (startValue: number) => void
     error: string | null
-    setButton: () => void
+    setButton: (startValue: number,maxValue: number) => void
 }
 export const LeftTablo = (props: LeftTabloPropsType) => {
 
@@ -37,7 +37,7 @@ export const LeftTablo = (props: LeftTabloPropsType) => {
                     className={props.error ? s.errorInput : s.superInput}
                 />
             </div>
-            <button onClick={props.setButton} className={s.default}>Set</button>
+            <button onClick={()=>props.setButton(props.startValue,props.maxValue)} className={s.default}>Set</button>
         </div>
     );
 };

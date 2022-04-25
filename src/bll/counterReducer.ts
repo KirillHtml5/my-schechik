@@ -23,6 +23,8 @@ type ActionsType = IncNum | ResetNum | SetMaxNum | SetStartNum;
 
 const initialState = {
     num: 0,
+    startValue: 0,
+    maxValue: 0,
 }
 type InitialStateType = typeof initialState;
 
@@ -31,16 +33,15 @@ export const counterReducer = (state: InitialStateType = initialState, action: A
         case "INCREASE-NUM":
             return {...state, num: state.num + 1};
         case "RESET-NUM":
-            return {...state, num: action.startValue};
+            return {...state, startValue: action.startValue};
         case "SET-MAX-NUM":
-            return {...state, num: action.maxValue};
+            return {...state, maxValue: action.maxValue};
         case "SET-START-NUM":
-            return {...state, num: action.startValue};
+            return {...state, startValue: action.startValue};
         default:
             return state;
 
     }
-    
 };
 
 export const increaseNumAC = (): IncNum => {
