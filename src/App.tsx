@@ -8,6 +8,7 @@ import {increaseNumAC, resetNumAC, setMaxNumAC, setStartNumAC} from "./bll/count
 
 
 function App() {
+
     const value = useSelector<AppRootStateType, number>(state => state.counter.num);
     const startNum = useSelector<AppRootStateType, number>(state => state.counter.startValue);
     const maxNum = useSelector<AppRootStateType, number>(state => state.counter.maxValue);
@@ -56,14 +57,14 @@ function App() {
 
 
     const setButton = () => {
-        // setNum(num)
+
         dispatch(setStartNumAC(startNum))
         dispatch(setMaxNumAC(maxNum))
 
     }
 
     const onClickInc = () => {
-        if (value < maxValue)
+        if (value < maxNum)
             dispatch(increaseNumAC())
     }
     const onClickReset = () => {
@@ -71,7 +72,7 @@ function App() {
     }
 
     const onChangeMax = (maxNum: number) => {
-        if (maxValue > 0 && maxValue > startValue) {
+        if (maxNum > 0 && maxNum > startNum) {
             dispatch(setMaxNumAC(maxNum))
             setError('')
         } else {
@@ -80,7 +81,7 @@ function App() {
 
     }
     const onChangeStart = (startNum: number) => {
-        if (startValue >= 0 && startValue < maxValue) {
+        if (startNum >= 0 && startNum < maxNum) {
             dispatch(setStartNumAC(startNum))
             setError('')
         } else {

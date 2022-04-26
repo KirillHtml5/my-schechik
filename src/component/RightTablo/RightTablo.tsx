@@ -20,7 +20,8 @@ export const RightTablo = (props: RightTabloType) => {
                 <Tablo number={props.number} numMax={props.numMax} error={props.error}/>
             </div>
             <div>
-                <UniButton name={'inc'} callBack={props.onClickInc} disabled={props.number === props.numMax}/>
+                <UniButton name={'inc'} callBack={props.onClickInc}
+                           disabled={props.number === props.numMax}/>
                 <UniButton name={'reset'} callBack={props.onClickReset} disabled={props.number === props.num}/>
             </div>
         </div>
